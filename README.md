@@ -32,7 +32,7 @@ The naming convention and behavior of the API mirrors the functions defined in t
 ```cpp
 // Define 'CODEPOINT_IMPLEMENTATION' before including the header in one of your source files.
 #define CODEPOINT_IMPLEMENTATION
-#include "codepoints.h"
+#include "libcodepoint.h"
 
 int main(int argc, char *argv)
 {
@@ -81,7 +81,7 @@ The header output is configurable. You can view all options by executing `libcod
 For example, the usage of the `inline` keyword and `stdint.h` header can be suppressed with:
 
 ```
-$ libcodepoint.py --no-stdint --no-inline codepoints.h
+$ libcodepoint.py --no-stdint --no-inline libcodepoint.h
 ```
 
 ## License

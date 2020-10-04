@@ -1,4 +1,4 @@
-DEPS = codepoints.h
+DEPS = libcodepoint.h
 OBJ = example.o
 
 %.o: %.c $(DEPS)
@@ -7,12 +7,12 @@ OBJ = example.o
 example: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-codepoints.h:
-	python3 ./libcodepoint.py codepoints.h
+libcodepoint.h:
+	python3 ./libcodepoint.py libcodepoint.h
 
 .PHONY: clean
 
 clean:
 	rm -f *.o
-	rm codepoints.h
+	rm libcodepoint.h
 	rm example

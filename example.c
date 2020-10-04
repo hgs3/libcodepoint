@@ -17,7 +17,7 @@
  */
 
 #define CODEPOINT_IMPLEMENTATION
-#include "codepoints.h"
+#include "libcodepoint.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
