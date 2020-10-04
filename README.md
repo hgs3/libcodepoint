@@ -19,7 +19,7 @@ Character encoding, decoding, and all other string manipulation is the users res
 
 The repo contains the scripts to generate the header. It does not contain the header itself.
 
-You can download a prebuilt header from the releases page.
+You can download a prebuilt header from the [releases page](https://github.com/hgs3/libcodepoint/releases).
 
 If your compiler does not provide the `stdint.h` header or the `inline` keyword, then you can generate a header without them by following the [build instructions](#Building).
 
