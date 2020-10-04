@@ -5,6 +5,8 @@ A single header library for transforming and querying information about Unicode 
 This is **not** a string library. It operates exclusively on individual code points.
 Character encoding, decoding, and all other string manipulation is the users responsibility.
 
+[![Build Status](https://api.travis-ci.org/hgs3/libcodepoint.svg?branch=master)](https://travis-ci.org/hgs3/libcodepoint)
+
 ## Features
 
 * Single header file.
