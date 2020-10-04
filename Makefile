@@ -2,7 +2,7 @@ DEPS = codepoints.h
 OBJ = example.o
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -std=c99 -c -o $@ $< $(CFLAGS)
 
 example: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)

@@ -337,8 +337,8 @@ def main() -> None:
         file.write('// ---------------------------------------------\n')
 
         file.write('\n')
-        file.write(f'#ifndef CODEPOINT_DEFINITIONS\n')
-        file.write(f'#define CODEPOINT_DEFINITIONS\n')
+        file.write('#ifndef CODEPOINT_DEFINITIONS\n')
+        file.write('#define CODEPOINT_DEFINITIONS\n')
         file.write('\n')
 
         file.write(f'typedef {code_point_type} {prefix}codepoint;\n')
@@ -381,7 +381,7 @@ def main() -> None:
         file.write(f"#define {prefix_upper}CODEPOINT_FORMATTING 0x%0x // Unicode character class 'Cf'\n" % (FORMATTING_MASK))
 
         file.write('\n')
-        file.write(f'#endif\n')  # end of definitions
+        file.write('#endif\n')  # end of definitions
         file.write('\n')
 
         file.write('// ---------------------------------------------\n')
@@ -390,7 +390,7 @@ def main() -> None:
 
         file.write('\n')
         # beginning of implementation
-        file.write(f'#ifdef CODEPOINT_IMPLEMENTATION\n')
+        file.write('#ifdef CODEPOINT_IMPLEMENTATION\n')
         file.write('\n')
 
         # Write unique codepoints.
