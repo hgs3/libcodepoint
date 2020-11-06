@@ -1,0 +1,27 @@
+name: Lint and Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        sudo apt-get install build-essential
+        python -m pip install --upgrade pip
+        pip install pylint mypy
+    - name: Lint
+      run: |
+        pylint libcodepoint.py
+        mypy --strict libcodepoint.py
+    - name: Test
+      run: |
+        make
+        python test.py
