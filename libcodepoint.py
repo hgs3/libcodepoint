@@ -303,14 +303,15 @@ def main() -> None:
         print('')
 
     with open(args.outfile, 'w') as file:
-        code_points_size = (len(unique_codepoints) * 20) / 1024
+        element_size_in_bytes = 20
+        code_points_size = (len(unique_codepoints) * element_size_in_bytes) / 1024
         stage1_table_size = (len(stage1) * 4) / 1024
         stage2_table_size = (len(stage2) * 4) / 1024
         total_size = code_points_size + stage1_table_size + stage2_table_size
 
         if args.info:
             print(
-                'Uncompressed code points table size: %d kilobytes' % ((len(codepoints) * 20) / 1024))
+                'Uncompressed code points table size: %d kilobytes' % ((len(codepoints) * element_size_in_bytes) / 1024))
             print('Compressed code points table size: %d kilobytes' % (code_points_size))
             print('Stage1 table size: %d kilobytes' % (stage1_table_size))
             print('Stage2 table size: %d kilobytes' % (stage2_table_size))
@@ -395,7 +396,7 @@ def main() -> None:
 
         # Write unique codepoints.
         file.write('// This table is a set of %d unique code points.\n' % (len(unique_codepoints)))
-        file.write('// It is %d bytes in size.\n' % (len(unique_codepoints) * 20))
+        file.write('// It is %d bytes in size.\n' % (len(unique_codepoints) * element_size_in_bytes))
         file.write(f'static const struct {prefix}codepointdata {{\n')
         file.write(f'    {prefix}codepoint upper;\n')
         file.write(f'    {prefix}codepoint lower;\n')
